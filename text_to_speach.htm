@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Text-to-Speech Sample</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link href="/CSS/tts.css" rel="stylesheet" type="text/css"/>
+  <link href='https://fonts.googleapis.com/css?family=Stylish' rel='stylesheet'>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Lobster&family=Orelega+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital@1&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="banner">
+  <nav class="navbar navbar-dark bg-dark">
+  <div class="banner_left">
+    <img src="icon_128.png" class="logo" alt="">
+  </div>
+
+  <div class="banner_right">
+    <h1>Text-to-Speech</h1>
+  </nav>
+    <p>
+      Use this application to try out all of the text-to-speech voices in Chrome.
+    </p>
+  </div>
+</div>
+
+<div class="body_wrapper">
+  <div class="body_left">
+    <div class="body_inner">
+
+      Enter text here:
+      <p id="demo"><textarea id="srctext" rows="4" cols="40">This is a demo of text-to-speech.</textarea></p>
+
+      <p>
+        <button id="speak" class="btn btn-success">Speak</button>
+        <button id="stop" class="btn btn-danger" >Stop</button>
+        <button id="summary-gen" class="btn btn-dark">Get the latest summary</button>
+      </p>
+
+      <div class="box" id="ttsStatusBox">
+        TTS status: <b><span id="ttsStatus"></span></b>
+      </div>
+
+      <p>
+
+
+    </div>
+  </div>
+  <div class="body_right">
+    <div class="body_inner">
+
+      <table border="0">
+        <tr>
+        <td>Voice:</td>
+        <td><select id="voices">
+              <option value="">Unspecified</option>
+            </select></td>
+        </td>
+        </tr>
+        <tr>
+        <td>Lang:</td>
+        <td><select id="lang">
+          <option value="">Unspecified</option>
+          <option value="de">de (German)</option>
+          <option value="en-GB">en-GB (British English)</option>
+          <option value="en-US" selected>en-US (American English)</option>
+          <option value="es">es (Spanish)</option>
+          <option value="fr">fr (French)</option>
+          <option value="it">it (Italian)</option>
+        </select></td></tr>
+        <tr>
+        <td>Queuing mode:</td>
+        <td><select id="enqueue">
+          <option value="">Interrupt</option>
+          <option value="true">Enqueue</option>
+        </select></td></tr>
+        <tr>
+        <td>Rate:</td>
+        <td><input id="rate" type="range" min="0.1" max="10.0" value="1.0" step="0.1">
+        </td></tr>
+        <tr>
+        <td>Pitch:</td>
+        <td><input id="pitch" type="range" min="0.0" max="2.0" value="1.0" step="0.1">
+        </td></tr>
+        <tr>
+        <td>Volume:</td>
+        <td><input id="volume" type="range" min="0.0" max="1.0" value="1.0" step="0.1">
+        </td></tr>
+      </table>
+
+      <pre id="voiceInfo"></pre>
+    </div>
+  </div>
+</div>
+
+<script src="/js/text_to_speach.js"></script>
+</body>
+</html>
